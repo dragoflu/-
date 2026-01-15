@@ -28,26 +28,29 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 20px 16px 30px;
+            padding: 20px 20px 60px;
         }
 
         .container {
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            flex: 1;
         }
 
-        /* Corgi Medal Section */
+        /* Corgi Medal Section - БОЛЬШОЙ как на макете */
         .corgi-section {
             position: relative;
-            width: 280px;
-            height: 280px;
+            width: 85vw;
+            max-width: 380px;
+            height: 85vw;
+            max-height: 380px;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 20px;
         }
 
         .medal-background {
@@ -60,8 +63,8 @@
 
         .corgi-image {
             position: absolute;
-            width: 65%;
-            height: 65%;
+            width: 55%;
+            height: 55%;
             object-fit: contain;
             z-index: 2;
             top: 50%;
@@ -75,147 +78,130 @@
             grid-template-columns: 1fr 1fr;
             gap: 12px;
             width: 100%;
-            max-width: 320px;
+            max-width: 360px;
             padding: 0 10px;
         }
 
         .city-button {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 16px;
-            color: #1a1a2e;
-            background: linear-gradient(180deg, #FF8C42 0%, #FF6B1A 100%);
+            font-size: 18px;
+            color: #3d2600;
+            background: linear-gradient(180deg, #FFB347 0%, #FF9500 100%);
             border: none;
-            border-radius: 16px;
-            padding: 16px 20px;
+            border-radius: 20px;
+            padding: 22px 20px;
             cursor: pointer;
             transition: all 0.2s ease;
             box-shadow: 
-                0 4px 15px rgba(255, 107, 26, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+                0 4px 15px rgba(255, 149, 0, 0.3);
             text-align: center;
-            min-height: 56px;
+            min-height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
+            line-height: 1.2;
         }
 
         .city-button:hover {
             transform: translateY(-2px);
             box-shadow: 
-                0 6px 20px rgba(255, 107, 26, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+                0 6px 20px rgba(255, 149, 0, 0.45);
         }
 
         .city-button:active {
             transform: translateY(0);
             box-shadow: 
-                0 2px 10px rgba(255, 107, 26, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+                0 2px 10px rgba(255, 149, 0, 0.3);
         }
 
         .city-button.light {
-            background: linear-gradient(180deg, #FFB88C 0%, #FFA066 100%);
-            color: #1a1a2e;
+            background: linear-gradient(180deg, #FFD9A8 0%, #FFBB6C 100%);
+            color: #3d2600;
         }
 
         /* Bottom Museum Section */
         .museum-section {
             margin-top: auto;
             width: 100%;
-            max-width: 320px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px;
-            padding-top: 30px;
+            padding-top: 40px;
         }
 
         .museum-title {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 22px;
+            font-weight: 800;
+            font-size: 28px;
             color: #ffffff;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            letter-spacing: 1px;
-        }
-
-        .museum-badge {
-            width: 100%;
-            max-width: 280px;
-            height: auto;
-        }
-
-        /* Progress bar decoration */
-        .progress-decoration {
-            width: 100%;
-            max-width: 300px;
-            height: 4px;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                rgba(138, 43, 226, 0.6) 20%, 
-                rgba(75, 0, 130, 0.8) 50%, 
-                rgba(138, 43, 226, 0.6) 80%, 
-                transparent 100%
-            );
-            border-radius: 2px;
-            margin-top: 15px;
-            position: relative;
-        }
-
-        .progress-decoration::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                rgba(255, 255, 255, 0.3) 50%, 
-                transparent 100%
-            );
-            animation: shimmer 2s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+            letter-spacing: 3px;
+            font-style: italic;
         }
 
         /* Responsive adjustments */
         @media (max-height: 700px) {
+            body {
+                padding: 15px 15px 40px;
+            }
+            
             .corgi-section {
-                width: 220px;
-                height: 220px;
+                width: 70vw;
+                max-width: 280px;
+                height: 70vw;
+                max-height: 280px;
+                margin-bottom: 15px;
             }
             
             .city-button {
-                padding: 12px 16px;
-                font-size: 14px;
-                min-height: 48px;
+                padding: 16px 16px;
+                font-size: 16px;
+                min-height: 58px;
+                border-radius: 16px;
+            }
+            
+            .buttons-container {
+                gap: 10px;
             }
             
             .museum-section {
-                padding-top: 15px;
+                padding-top: 25px;
+            }
+            
+            .museum-title {
+                font-size: 24px;
             }
         }
 
-        @media (min-height: 800px) {
-            .container {
-                gap: 30px;
+        @media (min-height: 850px) {
+            .corgi-section {
+                width: 90vw;
+                max-width: 420px;
+                height: 90vw;
+                max-height: 420px;
+                margin-bottom: 30px;
             }
             
-            .corgi-section {
-                width: 300px;
-                height: 300px;
+            .city-button {
+                padding: 26px 24px;
+                font-size: 20px;
+                min-height: 80px;
+            }
+            
+            .museum-section {
+                padding-top: 50px;
+            }
+            
+            .museum-title {
+                font-size: 32px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Corgi in Medal -->
+        <!-- Corgi in Medal - БОЛЬШОЙ -->
         <div class="corgi-section">
             <img 
                 src="https://github.com/dragoflu/-/blob/main/IMG_1641.PNG?raw=true" 
@@ -235,7 +221,7 @@
                 Москва
             </button>
             <button class="city-button light" onclick="navigateTo('spb')">
-                Санкт-Петербург
+                Санкт-<br>Петербург
             </button>
             <button class="city-button" onclick="navigateTo('kaliningrad')">
                 Калининград
@@ -245,25 +231,14 @@
             </button>
         </div>
 
-        <!-- Progress Decoration -->
-        <div class="progress-decoration"></div>
-
-        <!-- Museum Section -->
+        <!-- Museum Title Only - без плашки -->
         <div class="museum-section">
             <h1 class="museum-title">Музей Будущего</h1>
-            <img 
-                src="https://github.com/dragoflu/-/blob/main/IMG_1640.PNG?raw=true" 
-                alt="Museum badge" 
-                class="museum-badge"
-            >
         </div>
     </div>
 
     <script>
-        // Navigation function for buttons
         function navigateTo(city) {
-            // Placeholder for future navigation
-            // Replace these URLs with actual page URLs when ready
             const routes = {
                 'moscow': '#moscow',
                 'spb': '#spb',
@@ -272,10 +247,8 @@
             };
             
             console.log('Navigating to:', city);
-            // Uncomment and modify when pages are ready:
             // window.location.href = routes[city];
             
-            // Visual feedback
             event.target.style.transform = 'scale(0.95)';
             setTimeout(() => {
                 event.target.style.transform = '';
