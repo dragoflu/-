@@ -15,74 +15,119 @@
         html, body {
             height: 100%;
             width: 100%;
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: url('https://github.com/dragoflu/-/blob/main/2026-01-15%2019.21.54.jpg?raw=true') no-repeat center center;
-            background-size: cover;
-            min-height: 100vh;
-            min-height: 100dvh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 20px 20px 60px;
         }
 
-        .container {
-            width: 100%;
-            max-width: 420px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-        }
-
-        /* Corgi Medal Section - БОЛЬШОЙ как на макете */
-        .corgi-section {
-            position: relative;
-            width: 85vw;
-            max-width: 380px;
-            height: 85vw;
-            max-height: 380px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .medal-background {
-            position: absolute;
+        /* ==================== */
+        /* ФОН                  */
+        /* ==================== */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            z-index: 1;
+            z-index: 0;
         }
-
-        .corgi-image {
-            position: absolute;
-            width: 55%;
-            height: 55%;
-            object-fit: contain;
-            z-index: 2;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        /* Buttons Grid */
-        .buttons-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
+        .background img {
             width: 100%;
-            max-width: 360px;
-            padding: 0 10px;
+            height: 100%;
+            object-fit: cover;
         }
 
+        /* ==================== */
+        /* МЕДАЛЬ (без корги)   */
+        /* ==================== */
+        .medal {
+            position: absolute;
+            z-index: 1;
+            /* ДВИГАЙ ЗДЕСЬ: */
+            top: -10%;
+            left: 38%;
+            transform: translateX(-50%);
+            width: 155%;
+            max-width: 380px;
+        }
+        .medal img {
+            width: 125%;
+            height: auto;
+        }
+
+        /* ==================== */
+        /* КОРГИ (отдельно)     */
+        /* ==================== */
+        .corgi {
+            position: absolute;
+            z-index: 2;
+            /* ДВИГАЙ ЗДЕСЬ: */
+            top: -10%;
+            left: 11%;
+            transform: translateX(-50%);
+            width: 110%;
+            max-width: 200px;
+        }
+        .corgi img {
+            width: 250%;
+            height: auto;
+        }
+
+        /* ==================== */
+        /* КНОПКА МОСКВА        */
+        /* ==================== */
+        .btn-moscow {
+            position: absolute;
+            z-index: 3;
+            /* ДВИГАЙ ЗДЕСЬ: */
+            top: 46%;
+            left: 5%;
+            width: 44%;
+        }
+
+        /* ==================== */
+        /* КНОПКА САНКТ-ПЕТЕРБУРГ */
+        /* ==================== */
+        .btn-spb {
+            position: absolute;
+            z-index: 3;
+            /* ДВИГАЙ ЗДЕСЬ: */
+            top: 45%;
+            right: 5%;
+            width: 44%;
+        }
+
+        /* ==================== */
+        /* КНОПКА КАЛИНИНГРАД   */
+        /* ==================== */
+        .btn-kaliningrad {
+            position: absolute;
+            z-index: 3;
+            /* ДВИГАЙ ЗДЕСЬ: */
+            top: 60%;
+            left: 5%;
+            width: 44%;
+        }
+
+        /* ==================== */
+        /* КНОПКА СЕРЕБРИНСК    */
+        /* ==================== */
+        .btn-serebrinsk {
+            position: absolute;
+            z-index: 3;
+            /* ДВИГАЙ ЗДЕСЬ: */
+            top: 60%;
+            right: 5%;
+            width: 44%;
+        }
+
+        /* ==================== */
+        /* ОБЩИЙ СТИЛЬ КНОПОК   */
+        /* ==================== */
         .city-button {
+            width: 100%;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             font-size: 18px;
@@ -90,170 +135,112 @@
             background: linear-gradient(180deg, #FFB347 0%, #FF9500 100%);
             border: none;
             border-radius: 20px;
-            padding: 22px 20px;
+            padding: 22px 18px;
             cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 
-                0 4px 15px rgba(255, 149, 0, 0.3);
             text-align: center;
-            min-height: 70px;
+            min-height: 72px;
             display: flex;
             align-items: center;
             justify-content: center;
             line-height: 1.2;
         }
-
-        .city-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 
-                0 6px 20px rgba(255, 149, 0, 0.45);
-        }
-
-        .city-button:active {
-            transform: translateY(0);
-            box-shadow: 
-                0 2px 10px rgba(255, 149, 0, 0.3);
-        }
-
         .city-button.light {
             background: linear-gradient(180deg, #FFD9A8 0%, #FFBB6C 100%);
-            color: #3d2600;
         }
 
-        /* Bottom Museum Section */
-        .museum-section {
-            margin-top: auto;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 40px;
-        }
-
+        /* ==================== */
+        /* ТЕКСТ МУЗЕЙ БУДУЩЕГО */
+        /* ==================== */
         .museum-title {
+            position: absolute;
+            z-index: 3;
+            /* ДВИГАЙ ЗДЕСЬ: */
+            bottom: 14%;
+            left: 50%;
+            transform: translateX(-50%);
+            
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
-            font-size: 28px;
+            font-size: 21px;
             color: #ffffff;
             text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             font-style: italic;
+            white-space: nowrap;
         }
 
-        /* Responsive adjustments */
-        @media (max-height: 700px) {
-            body {
-                padding: 15px 15px 40px;
-            }
-            
-            .corgi-section {
-                width: 70vw;
-                max-width: 280px;
-                height: 70vw;
-                max-height: 280px;
-                margin-bottom: 15px;
-            }
-            
-            .city-button {
-                padding: 16px 16px;
-                font-size: 16px;
-                min-height: 58px;
-                border-radius: 16px;
-            }
-            
-            .buttons-container {
-                gap: 10px;
-            }
-            
-            .museum-section {
-                padding-top: 25px;
-            }
-            
-            .museum-title {
-                font-size: 24px;
-            }
+        /* ==================== */
+        /* ПЛАШКА (зелёная)     */
+        /* ==================== */
+        .badge {
+            position: absolute;
+            z-index: 2;
+            /* ДВИГАЙ ЗДЕСЬ: */
+            bottom: -8%;
+            left: 22%;
+            transform: translateX(-50%);
+            width: 70%;
+            max-width: 300px;
+        }
+        .badge img {
+            width: 180%;
+            height: auto;
         }
 
-        @media (min-height: 850px) {
-            .corgi-section {
-                width: 90vw;
-                max-width: 420px;
-                height: 90vw;
-                max-height: 420px;
-                margin-bottom: 30px;
-            }
-            
-            .city-button {
-                padding: 26px 24px;
-                font-size: 20px;
-                min-height: 80px;
-            }
-            
-            .museum-section {
-                padding-top: 50px;
-            }
-            
-            .museum-title {
-                font-size: 32px;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Corgi in Medal - БОЛЬШОЙ -->
-        <div class="corgi-section">
-            <img 
-                src="https://github.com/dragoflu/-/blob/main/IMG_1641.PNG?raw=true" 
-                alt="Medal background" 
-                class="medal-background"
-            >
-            <img 
-                src="https://github.com/dragoflu/-/blob/main/IMG_1638.PNG?raw=true" 
-                alt="Corgi mascot" 
-                class="corgi-image"
-            >
-        </div>
 
-        <!-- City Buttons -->
-        <div class="buttons-container">
-            <button class="city-button" onclick="navigateTo('moscow')">
-                Москва
-            </button>
-            <button class="city-button light" onclick="navigateTo('spb')">
-                Санкт-<br>Петербург
-            </button>
-            <button class="city-button" onclick="navigateTo('kaliningrad')">
-                Калининград
-            </button>
-            <button class="city-button light" onclick="navigateTo('serebrinsk')">
-                Серебринск
-            </button>
-        </div>
+    <!-- ФОН -->
+    <div class="background">
+        <img src="https://github.com/dragoflu/-/blob/main/2026-01-15%2019.21.54.jpg?raw=true" alt="Background">
+    </div>
 
-        <!-- Museum Title Only - без плашки -->
-        <div class="museum-section">
-            <h1 class="museum-title">Музей Будущего</h1>
-        </div>
+    <!-- МЕДАЛЬ -->
+    <div class="medal">
+        <img src="https://github.com/dragoflu/-/blob/main/IMG_1641.PNG?raw=true" alt="Medal">
+    </div>
+
+    <!-- КОРГИ -->
+    <div class="corgi">
+        <img src="https://github.com/dragoflu/-/blob/main/IMG_1638.PNG?raw=true" alt="Corgi">
+    </div>
+
+    <!-- КНОПКА МОСКВА -->
+    <div class="btn-moscow">
+        <button class="city-button" onclick="navigateTo('moscow')">Москва</button>
+    </div>
+
+    <!-- КНОПКА САНКТ-ПЕТЕРБУРГ -->
+    <div class="btn-spb">
+        <button class="city-button light" onclick="navigateTo('spb')">Санкт-<br>Петербург</button>
+    </div>
+
+    <!-- КНОПКА КАЛИНИНГРАД -->
+    <div class="btn-kaliningrad">
+        <button class="city-button" onclick="navigateTo('kaliningrad')">Калининград</button>
+    </div>
+
+    <!-- КНОПКА СЕРЕБРИНСК -->
+    <div class="btn-serebrinsk">
+        <button class="city-button light" onclick="navigateTo('serebrinsk')">Серебринск</button>
+    </div>
+
+    <!-- ТЕКСТ МУЗЕЙ БУДУЩЕГО -->
+    <h1 class="museum-title">Музей Будущего</h1>
+
+    <!-- ПЛАШКА -->
+    <div class="badge">
+        <img src="https://github.com/dragoflu/-/blob/main/IMG_1640.PNG?raw=true" alt="Badge">
     </div>
 
     <script>
         function navigateTo(city) {
-            const routes = {
-                'moscow': '#moscow',
-                'spb': '#spb',
-                'kaliningrad': '#kaliningrad',
-                'serebrinsk': '#serebrinsk'
-            };
-            
             console.log('Navigating to:', city);
-            // window.location.href = routes[city];
-            
-            event.target.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                event.target.style.transform = '';
-            }, 150);
+            // Раскомментируй и добавь свои ссылки:
+            // window.location.href = city + '.html';
         }
     </script>
+
 </body>
 </html>
